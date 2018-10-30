@@ -43,18 +43,35 @@ var storeTwo = {
   minCust: 3,
   maxCust: 24,
   avgSale: 1.2,
-  openHours: [],
+  perHour: [],
   custPerHour: function () {
     for (var i = 0; i < hoursOfOperation.length; i++) {
       var randomCustomer = Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
       var cookiesPerHour = Math.floor(randomCustomer * this.avgSale);
       console.log([hoursOfOperation[i], cookiesPerHour]);
-      // this.openHours.push([hoursOfOperation[i], cookiesPerHour]);
-      // this.openHours.push([hoursOfOperation[i], cookiesPerHour]);
-      // console.log(this.openHours);
     }
   },
+  render() {
+    var container = document.createElement('section');
+    var nameEl = document.createElement('h3');
+    var orderedListLayout = document.createElement('ol');
+    container.appendChild(nameEl);
+    orderedListLayout.textContent = this.name;
+    container.appendChild(orderedListLayout);
+    var mainEl = document.getElementById('pikestore');
+    for (var i = 0; i < hoursOfOperation.length; i++) {
+      var listLayout = document.createElement('li');
+      listLayout.textContent = `${hoursOfOperation[i]}: ${this.perHour[i]} cookies`;
+      container.appendChild(listLayout);
+      mainEl.appendChild(container);
+    }
+    // var totalSum = this.perHour[i]; // placeholder for sum question with perHour
+    var totalListLayout = document.createElement('li');
+    container.appendChild(totalListLayout);
+    totalListLayout.textContent = `Total: ${this.cookieSum} cookies`;
+  }
 };
+storeTwo.render();
 storeTwo.custPerHour();
 console.log(storeTwo);
 
@@ -63,18 +80,35 @@ var storeThree = {
   minCust: 11,
   maxCust: 38,
   avgSale: 3.7,
-  openHours: [],
+  perHour: [],
   custPerHour: function () {
     for (var i = 0; i < hoursOfOperation.length; i++) {
       var randomCustomer = Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
       var cookiesPerHour = Math.floor(randomCustomer * this.avgSale);
       console.log([hoursOfOperation[i], cookiesPerHour]);
-      // this.openHours.push([hoursOfOperation[i], cookiesPerHour]);
-      // this.openHours.push([hoursOfOperation[i], cookiesPerHour]);
-      // console.log(this.openHours);
     }
   },
+  render() {
+    var container = document.createElement('section');
+    var nameEl = document.createElement('h3');
+    var orderedListLayout = document.createElement('ol');
+    container.appendChild(nameEl);
+    orderedListLayout.textContent = this.name;
+    container.appendChild(orderedListLayout);
+    var mainEl = document.getElementById('pikestore');
+    for (var i = 0; i < hoursOfOperation.length; i++) {
+      var listLayout = document.createElement('li');
+      listLayout.textContent = `${hoursOfOperation[i]}: ${this.perHour[i]} cookies`;
+      container.appendChild(listLayout);
+      mainEl.appendChild(container);
+    }
+    // var totalSum = this.perHour[i];
+    var totalListLayout = document.createElement('li');
+    container.appendChild(totalListLayout);
+    totalListLayout.textContent = `Total: ${this.cookieSum} cookies`;
+  }
 };
+storeThree.render();
 storeThree.custPerHour();
 console.log(storeThree);
 
@@ -83,18 +117,35 @@ var storeFour = {
   minCust: 20,
   maxCust: 38,
   avgSale: 2.3,
-  openHours: [],
+  perHour: [],
   custPerHour: function () {
     for (var i = 0; i < hoursOfOperation.length; i++) {
       var randomCustomer = Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
       var cookiesPerHour = Math.floor(randomCustomer * this.avgSale);
       console.log([hoursOfOperation[i], cookiesPerHour]);
-      // this.openHours.push([hoursOfOperation[i], cookiesPerHour]);
-      // this.openHours.push([hoursOfOperation[i], cookiesPerHour]);
-      // console.log(this.openHours);
     }
   },
+  render() {
+    var container = document.createElement('section');
+    var nameEl = document.createElement('h3');
+    var orderedListLayout = document.createElement('ol');
+    container.appendChild(nameEl);
+    orderedListLayout.textContent = this.name;
+    container.appendChild(orderedListLayout);
+    var mainEl = document.getElementById('pikestore');
+    for (var i = 0; i < hoursOfOperation.length; i++) {
+      var listLayout = document.createElement('li');
+      listLayout.textContent = `${hoursOfOperation[i]}: ${this.perHour[i]} cookies`;
+      container.appendChild(listLayout);
+      mainEl.appendChild(container);
+    }
+    // var totalSum = this.perHour[i];
+    var totalListLayout = document.createElement('li');
+    container.appendChild(totalListLayout);
+    totalListLayout.textContent = `Total: ${this.cookieSum} cookies`;
+  }
 };
+storeFour.render();
 storeFour.custPerHour();
 console.log(storeFour);
 
@@ -103,17 +154,34 @@ var storeFive = {
   minCust: 2,
   maxCust: 16,
   avgSale: 4.6,
-  openHours: [],
+  perHour: [],
   custPerHour: function () {
     for (var i = 0; i < hoursOfOperation.length; i++) {
       var randomCustomer = Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
       var cookiesPerHour = Math.floor(randomCustomer * this.avgSale);
       console.log([hoursOfOperation[i], cookiesPerHour]);
-      // this.openHours.push([hoursOfOperation[i], cookiesPerHour]);
-      // this.openHours.push([hoursOfOperation[i], cookiesPerHour]);
-      // console.log(this.openHours);
     }
   },
+  render() {
+    var container = document.createElement('section');
+    var nameEl = document.createElement('h3');
+    var orderedListLayout = document.createElement('ol');
+    container.appendChild(nameEl);
+    orderedListLayout.textContent = this.name;
+    container.appendChild(orderedListLayout);
+    var mainEl = document.getElementById('pikestore');
+    for (var i = 0; i < hoursOfOperation.length; i++) {
+      var listLayout = document.createElement('li');
+      listLayout.textContent = `${hoursOfOperation[i]}: ${this.perHour[i]} cookies`;
+      container.appendChild(listLayout);
+      mainEl.appendChild(container);
+    }
+    // var totalSum = this.perHour[i];
+    var totalListLayout = document.createElement('li');
+    container.appendChild(totalListLayout);
+    totalListLayout.textContent = `Total: ${this.cookieSum} cookies`;
+  }
 };
+storeFive.render();
 storeFive.custPerHour();
 console.log(storeFive);
