@@ -6,10 +6,12 @@ var firstAndPike = {
   avgSale: 6.3,
   custPerHour: function () {
     var randomCustomer = Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
+    console.log(randomCustomer);
     var cookiesPerHour = Math.floor(randomCustomer * this.avgSale);
-    for (var i = 0; i < hoursOfOperation.length; i++) {
-      console.log([hoursOfOperation[i], cookiesPerHour]);
-    }
+    console.log(cookiesPerHour);
+    // for (var i = 0; i < hoursOfOperation.length; i++) {
+    //   console.log([hoursOfOperation[i], cookiesPerHour]);
+    // }
   }
 };
 firstAndPike.custPerHour();
