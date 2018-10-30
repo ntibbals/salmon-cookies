@@ -5,10 +5,15 @@ var storeOne = {
   maxCust: 65,
   avgSale: 6.3,
   perHour: [],
+  totalSumofCookies: [],
   custPerHour: function () {
+    var sumOfCookies = 0;
     for (var i = 0; i < hoursOfOperation.length; i++) {
       var randomCustomer = Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
       var cookiesPerHour = Math.floor(randomCustomer * this.avgSale);
+      sumOfCookies += cookiesPerHour;
+      this.totalSumofCookies.push(sumOfCookies);
+      console.log(sumOfCookies);
       // this.perHour.push([hoursOfOperation[i], cookiesPerHour]);
       console.log([hoursOfOperation[i], cookiesPerHour]);
       this.perHour.push(cookiesPerHour);
@@ -32,11 +37,11 @@ var storeOne = {
     // var totalSum = this.perHour[i]; //placeholder
     var totalListLayout = document.createElement('li');
     container.appendChild(totalListLayout);
-    totalListLayout.textContent = `Total: ${this.cookieSum} cookies`;
+    totalListLayout.textContent = `Total: ${this.sumOfCookies} cookies`;
   }
 };
-storeOne.render();
 storeOne.custPerHour();
+storeOne.render();
 console.log(storeOne);
 
 var storeTwo = {
@@ -45,10 +50,14 @@ var storeTwo = {
   maxCust: 24,
   avgSale: 1.2,
   perHour: [],
+  totalSumofCookies: [],
   custPerHour: function () {
+    var sumOfCookies = 0;
     for (var i = 0; i < hoursOfOperation.length; i++) {
       var randomCustomer = Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
       var cookiesPerHour = Math.floor(randomCustomer * this.avgSale);
+      sumOfCookies += cookiesPerHour;
+      this.totalSumofCookies.push(sumOfCookies);
       // this.perHour.push([hoursOfOperation[i], cookiesPerHour]);
       console.log([hoursOfOperation[i], cookiesPerHour]);
       this.perHour.push(cookiesPerHour);
@@ -73,11 +82,11 @@ var storeTwo = {
     // var totalSum = this.perHour[i]; //placeholder
     var totalListLayout = document.createElement('li');
     container.appendChild(totalListLayout);
-    totalListLayout.textContent = `Total: ${this.cookieSum} cookies`;
+    totalListLayout.textContent = `Total: ${this.sumOfCookies} cookies`;
   }
 };
-storeTwo.render();
 storeTwo.custPerHour();
+storeTwo.render();
 console.log(storeTwo);
 
 var storeThree = {
@@ -86,10 +95,14 @@ var storeThree = {
   maxCust: 38,
   avgSale: 3.7,
   perHour: [],
+  totalSumofCookies: [],
   custPerHour: function () {
+    var sumOfCookies = 0;
     for (var i = 0; i < hoursOfOperation.length; i++) {
       var randomCustomer = Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
       var cookiesPerHour = Math.floor(randomCustomer * this.avgSale);
+      sumOfCookies += cookiesPerHour;
+      this.totalSumofCookies.push(sumOfCookies);
       console.log([hoursOfOperation[i], cookiesPerHour]);
       this.perHour.push(cookiesPerHour);
     }
@@ -112,11 +125,11 @@ var storeThree = {
     // var totalSum = this.perHour[i];
     var totalListLayout = document.createElement('li');
     container.appendChild(totalListLayout);
-    totalListLayout.textContent = `Total: ${this.cookieSum} cookies`;
+    totalListLayout.textContent = `Total: ${this.sumOfCookies} cookies`;
   }
 };
-storeThree.render();
 storeThree.custPerHour();
+storeThree.render();
 console.log(storeThree);
 
 var storeFour = {
@@ -125,10 +138,14 @@ var storeFour = {
   maxCust: 38,
   avgSale: 2.3,
   perHour: [],
+  totalSumofCookies: [],
   custPerHour: function () {
+    var sumOfCookies = 0;
     for (var i = 0; i < hoursOfOperation.length; i++) {
       var randomCustomer = Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
       var cookiesPerHour = Math.floor(randomCustomer * this.avgSale);
+      sumOfCookies += cookiesPerHour;
+      this.totalSumofCookies.push(sumOfCookies);
       console.log([hoursOfOperation[i], cookiesPerHour]);
       this.perHour.push(cookiesPerHour);
     }
@@ -151,11 +168,11 @@ var storeFour = {
     // var totalSum = this.perHour[i];
     var totalListLayout = document.createElement('li');
     container.appendChild(totalListLayout);
-    totalListLayout.textContent = `Total: ${this.cookieSum} cookies`;
+    totalListLayout.textContent = `Total: ${this.sumOfCookies} cookies`;
   }
 };
-storeFour.render();
 storeFour.custPerHour();
+storeFour.render();
 console.log(storeFour);
 
 var storeFive = {
@@ -164,10 +181,14 @@ var storeFive = {
   maxCust: 16,
   avgSale: 4.6,
   perHour: [],
+  totalSumofCookies: [],
   custPerHour: function () {
+    var sumOfCookies = 0;
     for (var i = 0; i < hoursOfOperation.length; i++) {
       var randomCustomer = Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
       var cookiesPerHour = Math.floor(randomCustomer * this.avgSale);
+      sumOfCookies += cookiesPerHour;
+      this.totalSumofCookies.push(sumOfCookies);
       console.log([hoursOfOperation[i], cookiesPerHour]);
       this.perHour.push(cookiesPerHour);
     }
@@ -190,9 +211,9 @@ var storeFive = {
     // var totalSum = this.perHour[i];
     var totalListLayout = document.createElement('li');
     container.appendChild(totalListLayout);
-    totalListLayout.textContent = `Total: ${this.cookieSum} cookies`;
+    totalListLayout.textContent = `Total: ${this.sumOfCookies} cookies`;
   }
 };
-storeFive.render();
 storeFive.custPerHour();
+storeFive.render();
 console.log(storeFive);
