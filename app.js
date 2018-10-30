@@ -37,7 +37,7 @@ var storeOne = {
     // var totalSum = this.perHour[i]; //placeholder
     var totalListLayout = document.createElement('li');
     container.appendChild(totalListLayout);
-    totalListLayout.textContent = `Total: ${this.sumOfCookies} cookies`;
+    totalListLayout.textContent = `Total: ${this.totalSumOfCookies} cookies`;
   }
 };
 storeOne.custPerHour();
@@ -82,7 +82,7 @@ var storeTwo = {
     // var totalSum = this.perHour[i]; //placeholder
     var totalListLayout = document.createElement('li');
     container.appendChild(totalListLayout);
-    totalListLayout.textContent = `Total: ${this.sumOfCookies} cookies`;
+    totalListLayout.textContent = `Total: ${this.totalSumOfCookies} cookies`;
   }
 };
 storeTwo.custPerHour();
@@ -125,7 +125,7 @@ var storeThree = {
     // var totalSum = this.perHour[i];
     var totalListLayout = document.createElement('li');
     container.appendChild(totalListLayout);
-    totalListLayout.textContent = `Total: ${this.sumOfCookies} cookies`;
+    totalListLayout.textContent = `Total: ${this.totalSumOfCookies} cookies`;
   }
 };
 storeThree.custPerHour();
@@ -168,7 +168,7 @@ var storeFour = {
     // var totalSum = this.perHour[i];
     var totalListLayout = document.createElement('li');
     container.appendChild(totalListLayout);
-    totalListLayout.textContent = `Total: ${this.sumOfCookies} cookies`;
+    totalListLayout.textContent = `Total: ${this.totalSumOfCookies} cookies`;
   }
 };
 storeFour.custPerHour();
@@ -211,7 +211,7 @@ var storeFive = {
     // var totalSum = this.perHour[i];
     var totalListLayout = document.createElement('li');
     container.appendChild(totalListLayout);
-    totalListLayout.textContent = `Total: ${this.sumOfCookies} cookies`;
+    totalListLayout.textContent = `Total: ${this.totalSumOfCookies} cookies`;
   }
 };
 storeFive.custPerHour();
