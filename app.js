@@ -1,21 +1,21 @@
-var hoursOfOperation = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'];
+// var hoursOfOperation = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'];
 var storeOne = {
   name: '1st and Pike',
   minCust: 23,
   maxCust: 65,
   avgSale: 6.3,
+  hoursOfOperation: ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'],
   perHour: [],
-  totalSumofCookies: [],
+  totalSumOfCookies: 0,
   custPerHour: function () {
     var sumOfCookies = 0;
-    for (var i = 0; i < hoursOfOperation.length; i++) {
+    for (var i = 0; i < this.hoursOfOperation.length; i++) {
       var randomCustomer = Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
       var cookiesPerHour = Math.floor(randomCustomer * this.avgSale);
-      sumOfCookies += cookiesPerHour;
-      this.totalSumofCookies.push(sumOfCookies);
+      this.totalSumOfCookies += cookiesPerHour;
       console.log(sumOfCookies);
       // this.perHour.push([hoursOfOperation[i], cookiesPerHour]);
-      console.log([hoursOfOperation[i], cookiesPerHour]);
+      console.log(this.hoursOfOperation[i], this.cookiesPerHour);
       this.perHour.push(cookiesPerHour);
     }
     console.log(storeOne.perHour);
@@ -28,9 +28,9 @@ var storeOne = {
     orderedListLayout.textContent = this.name;
     container.appendChild(orderedListLayout);
     var mainEl = document.getElementById('pikestore');
-    for (var i = 0; i < hoursOfOperation.length; i++) {
+    for (var i = 0; i < this.hoursOfOperation.length; i++) {
       var listLayout = document.createElement('li');
-      listLayout.textContent = `${hoursOfOperation[i]}: ${this.perHour[i]} cookies`;
+      listLayout.textContent = `${this.hoursOfOperation[i]}: ${this.perHour[i]} cookies`;
       container.appendChild(listLayout);
       mainEl.appendChild(container);
     }
@@ -50,16 +50,16 @@ var storeTwo = {
   maxCust: 24,
   avgSale: 1.2,
   perHour: [],
-  totalSumofCookies: [],
+  totalSumOfCookies: 0,
+  hoursOfOperation: ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'],
   custPerHour: function () {
-    var sumOfCookies = 0;
-    for (var i = 0; i < hoursOfOperation.length; i++) {
+    for (var i = 0; i < this.hoursOfOperation.length; i++) {
       var randomCustomer = Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
       var cookiesPerHour = Math.floor(randomCustomer * this.avgSale);
-      sumOfCookies += cookiesPerHour;
-      this.totalSumofCookies.push(sumOfCookies);
+      this.totalSumOfCookies += cookiesPerHour;
+      // this.totalSumofCookies.push(sumOfCookies);
       // this.perHour.push([hoursOfOperation[i], cookiesPerHour]);
-      console.log([hoursOfOperation[i], cookiesPerHour]);
+      console.log([this.hoursOfOperation[i], cookiesPerHour]);
       this.perHour.push(cookiesPerHour);
       this.perHour.push(cookiesPerHour);
     }
@@ -73,9 +73,9 @@ var storeTwo = {
     orderedListLayout.textContent = this.name;
     container.appendChild(orderedListLayout);
     var mainEl = document.getElementById('pikestore');
-    for (var i = 0; i < hoursOfOperation.length; i++) {
+    for (var i = 0; i < this.hoursOfOperation.length; i++) {
       var listLayout = document.createElement('li');
-      listLayout.textContent = `${hoursOfOperation[i]}: ${this.perHour[i]} cookies`;
+      listLayout.textContent = `${this.hoursOfOperation[i]}: ${this.perHour[i]} cookies`;
       container.appendChild(listLayout);
       mainEl.appendChild(container);
     }
@@ -95,15 +95,14 @@ var storeThree = {
   maxCust: 38,
   avgSale: 3.7,
   perHour: [],
-  totalSumofCookies: [],
+  totalSumOfCookies: 0,
+  hoursOfOperation: ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'],
   custPerHour: function () {
-    var sumOfCookies = 0;
-    for (var i = 0; i < hoursOfOperation.length; i++) {
+    for (var i = 0; i < this.hoursOfOperation.length; i++) {
       var randomCustomer = Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
       var cookiesPerHour = Math.floor(randomCustomer * this.avgSale);
-      sumOfCookies += cookiesPerHour;
-      this.totalSumofCookies.push(sumOfCookies);
-      console.log([hoursOfOperation[i], cookiesPerHour]);
+      this.totalSumOfCookies += cookiesPerHour;
+      console.log([this.hoursOfOperation[i], cookiesPerHour]);
       this.perHour.push(cookiesPerHour);
     }
     console.log(storeThree.perHour);
@@ -116,9 +115,9 @@ var storeThree = {
     orderedListLayout.textContent = this.name;
     container.appendChild(orderedListLayout);
     var mainEl = document.getElementById('pikestore');
-    for (var i = 0; i < hoursOfOperation.length; i++) {
+    for (var i = 0; i < this.hoursOfOperation.length; i++) {
       var listLayout = document.createElement('li');
-      listLayout.textContent = `${hoursOfOperation[i]}: ${this.perHour[i]} cookies`;
+      listLayout.textContent = `${this.hoursOfOperation[i]}: ${this.perHour[i]} cookies`;
       container.appendChild(listLayout);
       mainEl.appendChild(container);
     }
@@ -138,15 +137,14 @@ var storeFour = {
   maxCust: 38,
   avgSale: 2.3,
   perHour: [],
-  totalSumofCookies: [],
+  totalSumOfCookies: 0,
+  hoursOfOperation: ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'],
   custPerHour: function () {
-    var sumOfCookies = 0;
-    for (var i = 0; i < hoursOfOperation.length; i++) {
+    for (var i = 0; i < this.hoursOfOperation.length; i++) {
       var randomCustomer = Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
       var cookiesPerHour = Math.floor(randomCustomer * this.avgSale);
-      sumOfCookies += cookiesPerHour;
-      this.totalSumofCookies.push(sumOfCookies);
-      console.log([hoursOfOperation[i], cookiesPerHour]);
+      this.totalSumOfCookies += cookiesPerHour;
+      console.log([this.hoursOfOperation[i], cookiesPerHour]);
       this.perHour.push(cookiesPerHour);
     }
     console.log(storeFour.perHour);
@@ -159,9 +157,9 @@ var storeFour = {
     orderedListLayout.textContent = this.name;
     container.appendChild(orderedListLayout);
     var mainEl = document.getElementById('pikestore');
-    for (var i = 0; i < hoursOfOperation.length; i++) {
+    for (var i = 0; i < this.hoursOfOperation.length; i++) {
       var listLayout = document.createElement('li');
-      listLayout.textContent = `${hoursOfOperation[i]}: ${this.perHour[i]} cookies`;
+      listLayout.textContent = `${this.hoursOfOperation[i]}: ${this.perHour[i]} cookies`;
       container.appendChild(listLayout);
       mainEl.appendChild(container);
     }
@@ -181,15 +179,14 @@ var storeFive = {
   maxCust: 16,
   avgSale: 4.6,
   perHour: [],
-  totalSumofCookies: [],
+  totalSumOfCookies: 0,
+  hoursOfOperation: ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'],
   custPerHour: function () {
-    var sumOfCookies = 0;
-    for (var i = 0; i < hoursOfOperation.length; i++) {
+    for (var i = 0; i < this.hoursOfOperation.length; i++) {
       var randomCustomer = Math.floor((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
       var cookiesPerHour = Math.floor(randomCustomer * this.avgSale);
-      sumOfCookies += cookiesPerHour;
-      this.totalSumofCookies.push(sumOfCookies);
-      console.log([hoursOfOperation[i], cookiesPerHour]);
+      this.totalSumOfCookies += cookiesPerHour;
+      console.log([this.hoursOfOperation[i], cookiesPerHour]);
       this.perHour.push(cookiesPerHour);
     }
     console.log(storeFive.perHour);
@@ -202,9 +199,9 @@ var storeFive = {
     orderedListLayout.textContent = this.name;
     container.appendChild(orderedListLayout);
     var mainEl = document.getElementById('pikestore');
-    for (var i = 0; i < hoursOfOperation.length; i++) {
+    for (var i = 0; i < this.hoursOfOperation.length; i++) {
       var listLayout = document.createElement('li');
-      listLayout.textContent = `${hoursOfOperation[i]}: ${this.perHour[i]} cookies`;
+      listLayout.textContent = `${this.hoursOfOperation[i]}: ${this.perHour[i]} cookies`;
       container.appendChild(listLayout);
       mainEl.appendChild(container);
     }
