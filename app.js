@@ -1,4 +1,4 @@
-// var hoursOfOperation = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'];
+// // var hoursOfOperation = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'];
 var stores = [];
 
 function Store(name, minCust, maxCust, avgSale) {
@@ -13,16 +13,16 @@ function Store(name, minCust, maxCust, avgSale) {
   stores.push(this);
   // this.render();
 }
-Store.prototype.generateRandomCustPerHour = function (max, min) {
+Store.prototype.generateRandomCustPerHour = function () {
   for (var i = 0; i < this.hoursOfOps.length; i++) {
-    var randomCust = Math.floor(Math.random() * (max - min + 1) + min);
+    var randomCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
     this.custPerHour.push(randomCust);
     console.log(randomCust);
   }
 },
 Store.prototype.generateHourlySales = function () {
   //line below will popluate custPerHour Array
-  this.generateRandomCustPerHour(this.minCust, this.maxCust);
+  this.generateRandomCustPerHour();
   for (var i = 0; i < this.hoursOfOps.length; i++) {
     var perHour = Math.round(this.custPerHour[i] * this.avgSale);
     this.cookiesPerHour.push(perHour);
@@ -31,50 +31,62 @@ Store.prototype.generateHourlySales = function () {
     console.log(perHour);
   }
 };
-// Store.prototype.render = function () {
-//   var tbodyEl = document.getElementById('tbl-body');
-//   var trEl = document.createElement('tr');
-//   var thEl = document.createElement('th');
-//   thEl.textContent = this.name;
-//   trEl.appendChild(thEl);
-  
-
-//   var cookieEl = document.createElement('td');
-//   var hoursEl = document.createElement('td');
-  
-//   cookieEl.textContent = this.cookiesPerHour;
-//   hoursEl.textContent = this.hoursOfOps[0];
-
-//   trEl.appendChild(cookieEl);
-//   trEl.appendChild(hoursEl);
-
-//   tbodyEl.appendChild(trEl);
-
-// };
-function createTable () {
+function createTable() {
   var mainEl = document.getElementById('pikestore');
   var tblEl = document.createElement('table');
   var theadEl = document.createElement('thead');
-  var tbodyEl = document.createElement('body');
+  var tbodyEl = document.createElement('tbody');
   var tfootEl = document.createElement('tfoot');
 
-  mainEl.appendChild(tblEl);
-  tblEl.appendChild(theadEl);
-  tblEl.appendChild(tbodyEl);
-  tblEl.appendChild(tfootEl);
-
-  tblEl.id = 'table';
+  tblEl.id = 'store-table';
   theadEl.id = 'tbl-head';
   tbodyEl.id = 'tbl-body';
   tfootEl.id = 'tbl-foot';
   tblEl.className = 'tbl';
+  mainEl.appendChild(tblEl);
+  tblEl.appendChild(theadEl);
+  tblEl.appendChild(tbodyEl);
+  tblEl.appendChild(tfootEl);
+  // tbodyEl.appendChild(render)
+
 }
-console.log(createTable);
+Store.prototype.render = function () {
+  var tbodyEl = document.getElementbyID('store-table');
+  var trEL = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = this.name;
+  trEL.appendChild(thEl);
+
+  for (var i = 0; i < this.hoursOfOperation.length; i++) {
+    // var hourEl = document.createElement('td');
+    var cookieEl = document.createElement('td');
+    cookieEl.textContent = `${this.cookiesPerHour[i]}`;
+    this.trEl.appendChild(cookieEl);
+    this.mainEL.appendChild(this.trEl);
+    var dailySumEl = document.createElement('th1');
+    this.trEl.appendChild(dailySumEl);
+    this.trEL.appendChild(this.tbodyEl);
+  }
+
+  //   // var totalSum = this.perHour[i]; //placeholder
+  //   // var totalListLayout = document.createElement('li');
+  //   // container.appendChild(totalListLayout);
+  //   // totalListLayout.textContent = `Total: ${this.totalSumOfCookies} cookies`;
+};
 createTable();
+console.log(createTable);
 new Store('1st and Pike', 23, 65, 6.3);
-stores[0].generateRandomCustPerHour();
-console.log(stores);
-// stores[0].render();
+stores[0].generateHourlySales();
+new Store('SeaTac Airport', 3, 24, 1.2);
+stores[1].generateHourlySales();
+new Store('Seattle Center', 11, 38, 3.7);
+stores[2].generateHourlySales();
+new Store('Capitol Hill', 20, 38, 2.3);
+stores[3].generateHourlySales();
+new Store('Alki', 2, 16, 4.6);
+stores[4].generateHourlySales();
+stores[0].render();
+// console.log(stores);
 // var storeOne = {
 //   name: '1st and Pike',
 //   minCust: 23,
