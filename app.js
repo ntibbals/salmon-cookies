@@ -68,11 +68,25 @@ function createHead() {
     thEl.textContent = this.hoursOfOps[i];
     trEl.appendChild(thEl);
   }
-
   var thElTotalTitle = document.createElement('th');
-  
   thElTotalTitle.textContent = 'Daily Totals';
   trEl.appendChild(thElTotalTitle);
+}
+function createFoot() {
+  var tableFootElement = document.getElementById('tbl-foot');
+  var trEl = document.createElement('tr');
+  var tdElTotalsPerHour = document.createElement('td');
+  tdElTotalsPerHour.textContent = 'Total per Hours row';
+  trEl.appendChild(tdElTotalsPerHour);
+  tableFootElement.appendChild(trEl);
+  for (var i = 0; i < hoursOfOps.length; i++) {
+    var thEl = document.createElement('th');
+    thEl.textContent = [];
+    trEl.appendChild(thEl);
+  }
+  var thElTotalFoot = document.createElement('th');
+  thElTotalFoot.textContent = 'Placeholder';
+  trEl.appendChild(thElTotalFoot);
 }
 function createTable() {
   var mainEl = document.getElementById('pikestore');
@@ -90,11 +104,8 @@ function createTable() {
   tblEl.appendChild(theadEl);
   tblEl.appendChild(tbodyEl);
   tblEl.appendChild(tfootEl);
-  // tbodyEl.appendChild(render)
-
 }
 createTable();
-// createHead();
 
 console.log(createTable);
 new Store('1st and Pike', 23, 65, 6.3);
@@ -103,5 +114,6 @@ new Store('Seattle Center', 11, 38, 3.7);
 new Store('Capitol Hill', 20, 38, 2.3);
 new Store('Alki', 2, 16, 4.6);
 createHead();
+createFoot();
 
 
