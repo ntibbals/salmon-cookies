@@ -33,28 +33,29 @@ Store.prototype.generateHourlySales = function () {
   }
 };
 
+
 Store.prototype.render = function () {
-  this.generateHourlySales();
+  // this.generateHourlySales();
   var tbodyEl = document.getElementById('tbl-body'); ///anchors to html page
   var trEl = document.createElement('tr'); ///create table row element tag
   tbodyEl.appendChild(trEl);
   var thEl = document.createElement('th'); // create table head element tag
   trEl.textContent = this.name;
-  trEl.appendChild(thEl);
+  // trEl.appendChild(thEl);
+  // thEl.textContent = this.hoursOfOps;
   for (var i = 0; i < this.hoursOfOps.length; i++) {
     // var hourEl = document.createElement('td');
     var tdEl = document.createElement('td');
     tdEl.textContent = this.cookiesPerHour[i];
     trEl.appendChild(tdEl);
     var cookieEl = document.createElement('td');
-    cookieEl.textContent = `${this.cookiesPerHour[i]}`;
-    trEl.appendChild(cookieEl);
+    // cookieEl.textContent = `${this.cookiesPerHour[i]}`;
+    // trEl.appendChild(cookieEl);
     var dailySumEl = document.createElement('th1');
   }
-  thEl.textContent = this.hoursOfOps;
-  trEl.appendChild(dailySumEl);
-  tbodyEl.appendChild(trEl);
-  tbodyEl.appendChild(thEl);
+  // trEl.appendChild(dailySumEl);
+  // tbodyEl.appendChild(trEl);
+  // tbodyEl.appendChild(thEl);
 };
 
 // function createHead() {
@@ -86,7 +87,6 @@ function createTable() {
 createTable();
 console.log(createTable);
 new Store('1st and Pike', 23, 65, 6.3);
-stores[0].render();
 new Store('SeaTac Airport', 3, 24, 1.2);
 new Store('Seattle Center', 11, 38, 3.7);
 new Store('Capitol Hill', 20, 38, 2.3);
