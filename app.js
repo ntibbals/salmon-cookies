@@ -8,7 +8,7 @@ function Store(name, minCust, maxCust, avgSale) {
   this.custPerHour = [];
   this.cookiesPerHour = [];
   this.hoursOfOps = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'],
-    this.dailyTotal = 0;
+  this.dailyTotal = 0;
   stores.push(this);
   this.generateHourlySales(); // call function in the right place to run
   this.render();
@@ -21,17 +21,17 @@ Store.prototype.generateRandomCustPerHour = function () {
     console.log(randomCust);
   }
 },
-  Store.prototype.generateHourlySales = function () {
-    //line below will popluate custPerHour Array
-    this.generateRandomCustPerHour();
-    for (var i = 0; i < hoursOfOps.length; i++) {
-      var perHour = Math.round(this.custPerHour[i] * this.avgSale);
-      this.cookiesPerHour.push(perHour);
-      //this.dailyTotal= this.dailyTotal + perHour
-      this.dailyTotal += perHour;
-      console.log(perHour);
-    }
-  };
+Store.prototype.generateHourlySales = function () {
+  //line below will popluate custPerHour Array
+  this.generateRandomCustPerHour();
+  for (var i = 0; i < hoursOfOps.length; i++) {
+    var perHour = Math.floor(this.custPerHour[i] * this.avgSale);
+    this.cookiesPerHour.push(perHour);
+    //this.dailyTotal= this.dailyTotal + perHour
+    this.dailyTotal += perHour;
+    console.log(perHour);
+  }
+};
 
 
 Store.prototype.render = function () {
@@ -127,7 +127,7 @@ formReset.addEventListener('submit', function (event) {
   var newMaxCust = event.target.newMax.value;
   var newAvgSale = event.target.newAvgSale.value;
 
-  var pNewStore = document.createElement('p');
+  var pNewStore = document.createElement('tr');
   var pNewMinCust = document.createElement('p');
   var pNewMaxCust = document.createElement('p');
   var pNewAvgSale = document.createElement('p');
@@ -137,15 +137,12 @@ formReset.addEventListener('submit', function (event) {
   pNewMaxCust.textContent = newMaxCust;
   pNewAvgSale.textContent = newAvgSale;
 
-  var resultsEl = document.getElementById('result');
+  // var resultsEl = document.getElementById('result');
 
-  resultsEl.appendChild(pNewStore);
-  resultsEl.appendChild(pNewMinCust);
-  resultsEl.appendChild(pNewMaxCust);
-  resultsEl.appendChild(pNewAvgSale);
+  // resultsEl.appendChild(pNewStore);
+  // resultsEl.appendChild(pNewMinCust);
+  // resultsEl.appendChild(pNewMaxCust);
+  // resultsEl.appendChild(pNewAvgSale);
+  event.target.store = new Store(newStore, newMinCust, newMaxCust, newAvgSale);
 
-  event.target.newStore.value = '';
-  event.target.newMinCust.value = '';
-  event.target.newMaxCust.value = '';
-  event.target.newAvgSale.value = '';
 });
