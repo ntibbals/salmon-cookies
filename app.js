@@ -31,7 +31,7 @@ Store.prototype.generateHourlySales = function () {
     console.log(perHour);
     console.log(this.cookiesPerHour);
     for (var j = 0; j < this.custPerHour.length; j++)
-      var hourOfCookies = this.cookiesPerHour[i] + perHour;
+      var hourOfCookies = this.cookiesPerHour[0] + perHour;
     console.log(hourOfCookies);
     hourlyTotalSales.push(hourOfCookies);
     console.log(hourlyTotalSales);
