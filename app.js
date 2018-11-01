@@ -1,6 +1,6 @@
 var stores = [];
 var hoursOfOps = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'];
-var hourlyTotalSales  = [];
+var hourlyTotalSales = [];
 function Store(name, minCust, maxCust, avgSale) {
   this.name = name;
   this.minCust = minCust;
@@ -27,10 +27,15 @@ Store.prototype.generateHourlySales = function () {
   for (var i = 0; i < hoursOfOps.length; i++) {
     var perHour = Math.ceil(this.custPerHour[i] * this.avgSale);
     this.cookiesPerHour.push(perHour);
-    hourlyTotalSales += perHour;
-    console.log(hourlyTotalSales);
     this.dailyTotal += perHour;
     console.log(perHour);
+    console.log(this.cookiesPerHour);
+    for (var j = 0; j < this.custPerHour.length; j++)
+      var hourOfCookies = this.cookiesPerHour[i] + perHour;
+    console.log(hourOfCookies);
+    hourlyTotalSales.push(hourOfCookies);
+    console.log(hourlyTotalSales);
+    // console.log(hourlyTotalSales);
   }
 };
 
@@ -77,7 +82,7 @@ function createFoot() {
   var tableFootElement = document.getElementById('tbl-foot');
   var trEl = document.createElement('tr');
   var tdElTotalsPerHour = document.createElement('td');
-  tdElTotalsPerHour.textContent = 'Total per Hours row';
+  tdElTotalsPerHour.textContent = 'Hourly Totals';
   trEl.appendChild(tdElTotalsPerHour);
   tableFootElement.appendChild(trEl);
   for (var i = 0; i < hoursOfOps.length; i++) {
@@ -86,7 +91,7 @@ function createFoot() {
     trEl.appendChild(tdEl);
   }
   var thElTotalFoot = document.createElement('th');
-  thElTotalFoot.textContent = 'Placeholder';
+  thElTotalFoot.textContent = '';
   trEl.appendChild(thElTotalFoot);
 }
 function createTable() {
@@ -138,12 +143,12 @@ formReset.addEventListener('submit', function (event) {
   pNewMaxCust.textContent = newMaxCust;
   pNewAvgSale.textContent = newAvgSale;
 
-  // var resultsEl = document.getElementById('result');
+  // var resultsEl = document.getElementById('result'); //
 
   // resultsEl.appendChild(pNewStore);
   // resultsEl.appendChild(pNewMinCust);
   // resultsEl.appendChild(pNewMaxCust);
   // resultsEl.appendChild(pNewAvgSale);
   event.target.store = new Store(newStore, newMinCust, newMaxCust, newAvgSale);
- console.log(Store);
+  console.log(Store);
 });

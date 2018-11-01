@@ -11,13 +11,15 @@
   </header>
   <!-- id="main-content" is used as anchor between content and javascript -->
   <main id="pikestore">
+    <h1>Sales Projections</h1>
   <form id="form-data">
     <fieldset>
-    <span>New Store:</span><input name="newStore" type="text">
-    <span>Minimum Customers Per Hour</span><input name="newMin" type="number">
-    <span>Maximum Customers Per Hour</span><input name="newMax" type="number">
-    <span>Average Projected Sale Per Hour</span><input name="newAvgSale" type="number">
-    <button type="submit">Submit Store Info</button>
+    <h3>Input New Locations</h3>
+    <span>New Store: </span><input name="newStore" type="text" required><br>
+    <span>Minimum Customers Per Hour: </span><input name="newMin" type="number" required><br>
+    <span>Maximum Customers Per Hour: </span><input name="newMax" type="number" required><br>
+    <span>Average Projected Sale Per Hour: </span><input name="newAvgSale" type="number" required><br>
+    <button type="submit">Submit Store Info: </button>
     </fieldset>
   </form>
   </main>
