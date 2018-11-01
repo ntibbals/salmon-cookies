@@ -30,12 +30,12 @@ Store.prototype.generateHourlySales = function () {
     this.dailyTotal += perHour;
     console.log(perHour);
     console.log(this.cookiesPerHour);
-    for (var j = 0; j < this.custPerHour.length; j++)
-      var hourOfCookies = this.cookiesPerHour[0] + perHour;
-    console.log(hourOfCookies);
-    hourlyTotalSales.push(hourOfCookies);
-    console.log(hourlyTotalSales);
+    hourlyTotalSales.push(this.cookiesPerHour[i]);
+    // for (var j = 0; j < this.custPerHour.length; j++)
+    //   var hourOfCookies = this.cookiesPerHour[0] + perHour;
+    // console.log(hourOfCookies);
     // console.log(hourlyTotalSales);
+    // // console.log(hourlyTotalSales);
   }
 };
 
@@ -85,6 +85,12 @@ function createFoot() {
   tdElTotalsPerHour.textContent = 'Hourly Totals';
   trEl.appendChild(tdElTotalsPerHour);
   tableFootElement.appendChild(trEl);
+  // for (var j = 0; j < hoursOfOps.length; j++)
+  //   var hourOfCookies = hourlyTotalSales[j];
+  // console.log(hourOfCookies);
+  // hourlyTotalSales.push(hourOfCookies);
+  // console.log(hourlyTotalSales);
+  // console.log(hourlyTotalSales);
   for (var i = 0; i < hoursOfOps.length; i++) {
     var tdEl = document.createElement('td');
     tdEl.textContent = hourlyTotalSales[i];
