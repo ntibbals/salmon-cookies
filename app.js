@@ -1,5 +1,6 @@
 var stores = [];
 var hoursOfOps = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'];
+var hourlyTotalSales  = [];
 function Store(name, minCust, maxCust, avgSale) {
   this.name = name;
   this.minCust = minCust;
@@ -7,7 +8,6 @@ function Store(name, minCust, maxCust, avgSale) {
   this.avgSale = avgSale;
   this.custPerHour = [];
   this.cookiesPerHour = [];
-  this.hoursOfOps = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'],
   this.dailyTotal = 0;
   stores.push(this);
   this.generateHourlySales(); // call function in the right place to run
@@ -16,7 +16,7 @@ function Store(name, minCust, maxCust, avgSale) {
 }
 Store.prototype.generateRandomCustPerHour = function () {
   for (var i = 0; i < hoursOfOps.length; i++) {
-    var randomCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
+    var randomCust = Math.ceil(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
     this.custPerHour.push(randomCust);
     console.log(randomCust);
   }
@@ -25,9 +25,10 @@ Store.prototype.generateHourlySales = function () {
   //line below will popluate custPerHour Array
   this.generateRandomCustPerHour();
   for (var i = 0; i < hoursOfOps.length; i++) {
-    var perHour = Math.floor(this.custPerHour[i] * this.avgSale);
+    var perHour = Math.ceil(this.custPerHour[i] * this.avgSale);
     this.cookiesPerHour.push(perHour);
-    //this.dailyTotal= this.dailyTotal + perHour
+    hourlyTotalSales += perHour;
+    console.log(hourlyTotalSales);
     this.dailyTotal += perHour;
     console.log(perHour);
   }
@@ -80,9 +81,9 @@ function createFoot() {
   trEl.appendChild(tdElTotalsPerHour);
   tableFootElement.appendChild(trEl);
   for (var i = 0; i < hoursOfOps.length; i++) {
-    var thEl = document.createElement('th');
-    thEl.textContent = [];
-    trEl.appendChild(thEl);
+    var tdEl = document.createElement('td');
+    tdEl.textContent = hourlyTotalSales[i];
+    trEl.appendChild(tdEl);
   }
   var thElTotalFoot = document.createElement('th');
   thElTotalFoot.textContent = 'Placeholder';
@@ -144,5 +145,5 @@ formReset.addEventListener('submit', function (event) {
   // resultsEl.appendChild(pNewMaxCust);
   // resultsEl.appendChild(pNewAvgSale);
   event.target.store = new Store(newStore, newMinCust, newMaxCust, newAvgSale);
-
+ console.log(Store);
 });
