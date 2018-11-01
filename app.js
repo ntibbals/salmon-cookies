@@ -31,8 +31,6 @@ Store.prototype.generateHourlySales = function () {
     console.log(this.cookiesPerHour);
   }
 };
-
-
 Store.prototype.render = function () {
   this.generateHourlySales();
   var tbodyEl = document.getElementById('tbl-body'); ///anchors to html page
@@ -45,16 +43,11 @@ Store.prototype.render = function () {
     var tdEl = document.createElement('td');
     tdEl.textContent = this.cookiesPerHour[i];
     trEl.appendChild(tdEl);
-
   }
   var tdElTotals = document.createElement('td');
   tdElTotals.textContent = this.dailyTotal;
   trEl.appendChild(tdElTotals);
-
-
-
 };
-
 function createHead() {
   var tableHeadElement = document.getElementById('tbl-head');
   var trEl = document.createElement('tr');
@@ -100,7 +93,6 @@ function createFoot() {
   var grandTotalEl = document.createElement('td');
   grandTotalEl.textContent = grandTotal;
   trEl.appendChild(grandTotalEl);
-  // tblEl.appendChild(tfootEl);
   tfootEl.appendChild(trEl);
   tableFootElement.appendChild(tfootEl);
 
@@ -119,41 +111,26 @@ function createTable() {
   tblEl.appendChild(theadEl);
   tblEl.appendChild(tbodyEl);
 }
-
 createTable();
-createFoot();
+createHead();
 console.log(createTable);
 new Store('1st and Pike', 23, 65, 6.3);
 new Store('SeaTac Airport', 3, 24, 1.2);
 new Store('Seattle Center', 11, 38, 3.7);
 new Store('Capitol Hill', 20, 38, 2.3);
 new Store('Alki', 2, 16, 4.6);
-createHead();
-
-// function run() {
-//   var tfootElBomb = document.getElementById ('tbl-foot');
-//   if(tfootElBomb) {
-//     tfootElBomb.remove();
-//   }
-// }
-
-
 var formReset = document.getElementById('form-data');
 formReset.addEventListener('submit', function (event) {
   event.preventDefault();
   console.log(event.target.newAvgSale.value);
-
-
   var newStore = event.target.newStore.value;
   var newMinCust = event.target.newMin.value;
   var newMaxCust = event.target.newMax.value;
   var newAvgSale = event.target.newAvgSale.value;
-
   event.target.store = new Store(newStore, newMinCust, newMaxCust, newAvgSale);
   event.target.newStore.value ='';
   event.target.newMin.value = '';
   event.target.newMax.value = '';
   event.target.newAvgSale.value = '';
-
   console.log(Store);
 });
