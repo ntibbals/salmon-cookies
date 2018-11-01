@@ -1,3 +1,4 @@
+'use strict';
 var stores = [];
 var hoursOfOps = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'];
 // var hourlyTotalSales = [];
@@ -11,7 +12,7 @@ function Store(name, minCust, maxCust, avgSale) {
   this.dailyTotal = 0;
   stores.push(this);
   this.render();
-  // createFoot();
+  createFoot();
 }
 Store.prototype.generateRandomCustPerHour = function () {
   for (var i = 0; i < hoursOfOps.length; i++) {
@@ -31,8 +32,6 @@ Store.prototype.generateHourlySales = function () {
     console.log(this.cookiesPerHour);
   }
 };
-
-
 Store.prototype.render = function () {
   this.generateHourlySales();
   var tbodyEl = document.getElementById('tbl-body'); ///anchors to html page
@@ -45,16 +44,11 @@ Store.prototype.render = function () {
     var tdEl = document.createElement('td');
     tdEl.textContent = this.cookiesPerHour[i];
     trEl.appendChild(tdEl);
-
   }
   var tdElTotals = document.createElement('td');
   tdElTotals.textContent = this.dailyTotal;
   trEl.appendChild(tdElTotals);
-
-
-
 };
-
 function createHead() {
   var tableHeadElement = document.getElementById('tbl-head');
   var trEl = document.createElement('tr');
@@ -73,16 +67,19 @@ function createHead() {
 }
 function createFoot() {
 
-  var tfootElBomb = document.getElementById ('totals');
+  var tfootElBomb = document.getElementById ('tbl-foot');
   if(tfootElBomb) {
-    tableFootElement.remove();
+    tfootElBomb.remove();
   }
-  var tableFootElement = document.getElementById('tbl-foot');
+  
+  var tableFootElement = document.getElementById('store-table');
+  var tfootEl = document.createElement('tfoot');
   var trEl = document.createElement('tr');
+  tfootEl.id = 'tbl-foot';
   var tdElTotalsPerHour = document.createElement('td');
   tdElTotalsPerHour.textContent = 'Hourly Totals';
   trEl.appendChild(tdElTotalsPerHour);
-  tableFootElement.appendChild(trEl);
+  tfootEl.appendChild(trEl);
   var grandTotal = 0;
   for (var i = 0; i < hoursOfOps.length; i++) {
     var tdEl = document.createElement('td');
@@ -97,60 +94,43 @@ function createFoot() {
   var grandTotalEl = document.createElement('td');
   grandTotalEl.textContent = grandTotal;
   trEl.appendChild(grandTotalEl);
-
+  tfootEl.appendChild(trEl);
+  tableFootElement.appendChild(tfootEl);
 }
 function createTable() {
   var mainEl = document.getElementById('pikestore');
   var tblEl = document.createElement('table');
   var theadEl = document.createElement('thead');
   var tbodyEl = document.createElement('tbody');
-  var tfootEl = document.createElement('tfoot');
 
   tblEl.id = 'store-table';
   theadEl.id = 'tbl-head';
   tbodyEl.id = 'tbl-body';
-  tfootEl.id = 'tbl-foot';
   tblEl.className = 'tbl';
   mainEl.appendChild(tblEl);
   tblEl.appendChild(theadEl);
   tblEl.appendChild(tbodyEl);
-  tblEl.appendChild(tfootEl);
 }
-
 createTable();
+createHead();
 console.log(createTable);
 new Store('1st and Pike', 23, 65, 6.3);
 new Store('SeaTac Airport', 3, 24, 1.2);
 new Store('Seattle Center', 11, 38, 3.7);
 new Store('Capitol Hill', 20, 38, 2.3);
 new Store('Alki', 2, 16, 4.6);
-createHead();
-createFoot();
-
-// function run() {
-//   var tfootElBomb = document.getElementById ('tbl-foot');
-//   if(tfootElBomb) {
-//     tfootElBomb.remove();
-//   }
-// }
-
-
 var formReset = document.getElementById('form-data');
 formReset.addEventListener('submit', function (event) {
   event.preventDefault();
   console.log(event.target.newAvgSale.value);
-
-
   var newStore = event.target.newStore.value;
   var newMinCust = event.target.newMin.value;
   var newMaxCust = event.target.newMax.value;
   var newAvgSale = event.target.newAvgSale.value;
-
   event.target.store = new Store(newStore, newMinCust, newMaxCust, newAvgSale);
   event.target.newStore.value ='';
   event.target.newMin.value = '';
   event.target.newMax.value = '';
   event.target.newAvgSale.value = '';
-
   console.log(Store);
 });
