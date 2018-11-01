@@ -1,4 +1,5 @@
-'use strict';
+// 'use strict';
+
 var stores = [];
 var hoursOfOps = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM'];
 // var hourlyTotalSales = [];
@@ -58,7 +59,7 @@ function createHead() {
   tableHeadElement.appendChild(trEl);
   for (var i = 0; i < hoursOfOps.length; i++) {
     var thEl = document.createElement('th');
-    thEl.textContent = this.hoursOfOps[i];
+    thEl.textContent = hoursOfOps[i];
     trEl.appendChild(thEl);
   }
   var thElTotalTitle = document.createElement('th');
