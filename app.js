@@ -96,7 +96,6 @@ function createFoot() {
   trEl.appendChild(grandTotalEl);
   tfootEl.appendChild(trEl);
   tableFootElement.appendChild(tfootEl);
-
 }
 function createTable() {
   var mainEl = document.getElementById('pikestore');
