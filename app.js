@@ -72,7 +72,6 @@ function createFoot() {
   if(tfootElBomb) {
     tfootElBomb.remove();
   }
-  
   var tableFootElement = document.getElementById('store-table');
   var tfootEl = document.createElement('tfoot');
   var trEl = document.createElement('tr');
