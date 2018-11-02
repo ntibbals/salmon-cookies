@@ -76,9 +76,9 @@ function createFoot() {
   var tfootEl = document.createElement('tfoot');
   var trEl = document.createElement('tr');
   tfootEl.id = 'tbl-foot';
-  var tdElTotalsPerHour = document.createElement('td');
-  tdElTotalsPerHour.textContent = 'Hourly Totals';
-  trEl.appendChild(tdElTotalsPerHour);
+  var thElTotalsPerHour = document.createElement('th');
+  thElTotalsPerHour.textContent = 'Hourly Totals';
+  trEl.appendChild(thElTotalsPerHour);
   tfootEl.appendChild(trEl);
   var grandTotal = 0;
   for (var i = 0; i < hoursOfOps.length; i++) {

@@ -6,17 +6,20 @@ body {
   background-color: rgb(120, 120, 151);
   margin-right: 200px;
   display: block;
-
+  padding-left: 50px;
+  padding-right: 50px;
 }
+
 nav {
   text-align: center;
   box-sizing: absolute;
-  font-size: 25px
+  font-size: 25px;
 }
 main {
   background-color: rgb(120, 120, 151);
 }
 footer {
+  position: absolute;
   background-color: rgb(120, 120, 151);
 }
 .form {
@@ -28,51 +31,60 @@ footer {
   padding-left: 200px;
   padding-top: 25px;
 }
-.shirt {
+#cookie {
   position: absolute;
   display: block;
   float: right;
-  padding-top: 122px;
-  margin-left: 908px; 
-  height: 50%;
-  width: auto;
+  margin-top: 35px;
+  margin-left: 700px;
+  height: 15%;
 }
-.cookie {
+#fish {
   position: absolute;
   display: block;
   float: right;
-  margin-left: 900px;
-  height: 25%;
+  margin-top: 35px;
+  margin-left: 500px;
+  height: 15%;
 }
-/* .cookie2 {
+#salmon {
+  width: 45%;
+  padding-left: 75px;
+  margin-right: 30px;
+  padding-top: 20px;
+}
+#chinook {
   position: absolute;
-  display: block;
-  float: left;
-  /* margin-left: -350px; */
-  height: 75%;
-} */
+  /* padding-right: 250px; */
+  padding-top: 15px;
+  width: 43%;
+  float: center;
+}
+#fishes {
+  text-align: center;
+}
 #form-data {
   align-content: center;
   position: relative;
-  /* background-image: url("../images/salmon.png"); */
   background-repeat: no-repeat;
 }
 table {
   font-size: 20px;
   border: 2px solid black;
-  border-collapse:  collapse;
+  border-collapse:  seperate;
   text-align: center;
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* display: block; */
-
-
+  line-height: 25px;
+  border-spacing: 2em 2em;
+   margin-top: 5px;
 }
 td {
   border: 1px solid black;
-}
+  color: rgb(8, 77, 8);  
+
+  }
 th {
   border: 1px solid black;
+  font-weight: bold;
 }
 fieldset {
   line-height: 25px;

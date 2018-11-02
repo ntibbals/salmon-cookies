@@ -12,13 +12,11 @@
       
   }
   header {
-      /* font-family: calibri, serif; */
-      padding-top: 50px;
+      padding-top: 20px;
       font-size: 100px;
       text-align: center;
       box-sizing: absolute;
       height: 150px;
-
       text-shadow: 2px 2px 7px #111111;
       background-repeat: no-repeat;
       
@@ -32,7 +30,7 @@
       /* background-color: rgb(120, 120, 151); */
       padding-right: 20px;
       padding-left: 20px;
-      margin-top: -5px;
+      margin-top: -10px;
 
   }
   h1 {
@@ -46,11 +44,24 @@
     text-align: center;
     box-sizing: absolute;
   }
-  .family {
-    padding-top: 10px;
-    padding-bottom: 25px;
-    padding-left: 325px;
+  #shirt {
+    text-align: center;
+    position: absolute;
     display: block;
-    height: 50%;
-    width: 50%
+    float: right;
+    padding-top: 15px;
+    /* margin-left: 950px;  */
+    height: 30%;
+    width: auto;
+  }
+  #buyshirt {
+    font-size: 30px;
+    color: red;
+  }
+  .family {
+    padding-bottom: 25px;
+    padding-left: 345px;
+    display: block;
+    height: 45%;
+    width: 45%;
   }
