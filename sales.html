@@ -10,21 +10,29 @@
 <body>
   <header>
   </header>
-  <!-- id="main-content" is used as anchor between content and javascript -->
   <main id="pikestore">
-    <h1>Sales Projections</h1>
-  <form id="form-data">
+      <h1>Sales Projections </h1>
+      <nav>
+      <img src= "images/fish.jpg" id="fish">
+      <img src= "images/frosted-cookie.jpg" id="cookie">
+      <a href="index.html">Home</a>
+      <a href="sales.html">Sales Projections</a>
+      <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0">Who we are</a>
+      </nav>
+    <form id="form-data" class="form">
     <fieldset>
-    <h3>Input New Locations</h3>
-    <label id="store">New Store: </label><input id ="store" name="newStore" type="text" placeholder="New Store" required><br>
-    <label id="min">Minimum Customers Per Hour: </label><input id="min" name="newMin" type="number" placeholder="Minimum Per Hour" required><br>
-    <label id="max">Maximum Customers Per Hour: </label><input id="max" name="newMax" type="number" placeholder="Max Per Hour" required><br>
-    <label id="avg">Average Projected Sale Per Hour: </label><input id="avg" name="newAvgSale" type="number" step="0.01" placeholder="Average Sales Per Hour" required> <br>
-    <button type="submit">Submit Store Info: </button>
+    <label id="store" class="form">New Store: </label><input id ="store" name="newStore" type="text" placeholder="New Store" required><br>
+    <label id="min" class="form">Minimum Customers Per Hour: </label><input id="min" name="newMin" type="number" placeholder="Minimum Per Hour" required><br>
+    <label id="max" class="form">Maximum Customers Per Hour: </label><input id="max" name="newMax" type="number" placeholder="Max Per Hour" required><br>
+    <label id="avg" class="form">Average Projected Sale Per Hour: </label><input id="avg" name="newAvgSale" type="number" step="0.01" placeholder="Average Sales Per Hour" required> <br>
+    <button type="submit" class="submit">Submit Store Info: </button>
     </fieldset>
   </form>
   </main>
-  <footer></footer>
+  <footer>
+    <div id="fishes"><img src= "images/salmon.png" id="salmon">
+    <img src= "images/chinook.jpg" id="chinook"></div>
+  </footer>
   <script src="app.js"></script>
 </body>
 </html>
