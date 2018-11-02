@@ -17,7 +17,7 @@ function Store(name, minCust, maxCust, avgSale) {
 }
 Store.prototype.generateRandomCustPerHour = function () {
   for (var i = 0; i < hoursOfOps.length; i++) {
-    var randomCust = Math.ceil(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
+    var randomCust = Math.ceil(Math.random() * (this.maxCust - this.minCust) + this.minCust);
     this.custPerHour.push(randomCust);
     console.log(randomCust);
   }
@@ -37,6 +37,7 @@ Store.prototype.render = function () {
   this.generateHourlySales();
   var tbodyEl = document.getElementById('tbl-body'); ///anchors to html page
   var trEl = document.createElement('tr');
+  // trEl.id = this.name.toLowerCase().split(' ').join('_'); // designed to split out row for new input and then join back together
   var thEl = document.createElement('th'); ///create table row element tag
   tbodyEl.appendChild(trEl);
   thEl.textContent = this.name;
