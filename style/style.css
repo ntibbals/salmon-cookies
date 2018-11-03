@@ -76,7 +76,7 @@
   }
   #cookie {
     position: absolute;
-    padding-left: 740px;
+    padding-left: 840px;
     padding-top: 190px;
     font-size: 20px;
     height: 15%;
@@ -101,7 +101,7 @@
   }
   #locations {
     position: absolute;
-    padding-left: 880px;
+    padding-left: 980px;
     font-size: 20px;
   }
   li {
