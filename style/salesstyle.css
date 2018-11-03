@@ -31,25 +31,16 @@ footer {
   padding-left: 200px;
   padding-top: 25px;
 }
-#cookie {
+#dollar {
   position: absolute;
   display: block;
   float: right;
-  margin-top: 35px;
-  margin-left: 700px;
-  height: 15%;
-}
-#fish {
-  position: absolute;
-  display: block;
-  float: right;
-  margin-top: 35px;
-  margin-left: 500px;
-  height: 15%;
+  margin-left: 920px;
+  height: 25%;
 }
 #salmon {
   width: 45%;
-  padding-left: 75px;
+  padding-left: 110px;
   margin-right: 30px;
   padding-top: 20px;
 }
@@ -73,7 +64,7 @@ table {
   border-collapse:  seperate;
   text-align: center;
   border-spacing: 2em 2em;
-   margin-top: 5px;
+   margin-top: 20px;
 }
 td {
   border: 1px solid black;
